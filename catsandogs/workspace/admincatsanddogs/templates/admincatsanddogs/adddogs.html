@@ -1,0 +1,15 @@
+
+ <div class = "container" >
+ <div style = "margin: 50px auto;  max-width: 500px; border: thin white solid; padding: 20px; ">
+<form action= "/pets/dogs/create/" method="post">
+    <h3 style="text-align:center; ">Add Dogs</h3>
+ 
+   <p>Please enter your details below:</p>
+   {% csrf_token %}
+    
+
+{{ form}}
+<p style = "text-align:center;"><button type="submit" class="btn btn-danger" name = "cats">Add Dogs</button></p>
+</div> 
+  
+  
