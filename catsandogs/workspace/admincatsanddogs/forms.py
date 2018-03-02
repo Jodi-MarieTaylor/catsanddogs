@@ -8,12 +8,13 @@ from django.contrib.auth.forms import AuthenticationForm
 class CatsForm(forms.ModelForm):
     class Meta:
         model = Cats
-        fields = ('name', 'birthday', 'owner')
+        fields = ('name', 'birthday', 'ownerid')
 
-class DogsForm(forms.Form):
+class DogsForm(forms.ModelForm):
       class Meta:
         model = Dogs
-        fields = ('name', 'birthday', 'owner')
+        fields = ('name', 'birthday', 'ownerid')
+        
 class OwnersForm(forms.Form):
    class Meta:
         model = Owner

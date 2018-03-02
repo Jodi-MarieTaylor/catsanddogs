@@ -2,6 +2,10 @@
       <h1 class="w3-margin w3-jumbo">Welcome to CatLand</h1>
 
 </header>
+<a href="/pets/add/cats" class="button">Add Cat</a>
 
 <h1>Here are all your cats</h1>
-<p>{{cats.name}} {{cats.birthday}}</p>
+{% for cat in cats %}
+       <p>{{cat.name}} {{cat.birthday}} <a href="/pets/cats/remove/{{cat.id}}" class="button">Delete</a></p>
+    
+    {% endfor %}
