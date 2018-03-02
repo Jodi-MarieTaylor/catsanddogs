@@ -14,8 +14,15 @@ urlpatterns = [
     url(r'^cats/create', views.create_cats, name ='create_cats'),
     url(r'^add/dogs', views.add_dogs, name ='add_dogs'),
     url(r'^dogs/create', views.create_dogs, name ='create_dogs'),
+    url(r'^dogs/edit/(?P<dog_id>[0-9]+)', views.edit_dogs, name ='edit_dogs'),
+    url(r'^cats/edit/(?P<cat_id>[0-9]+)', views.edit_cats, name ='edit_cats'),
+
     url(r'^dogs/remove/(?P<dog_id>[0-9]+)', views.delete_dogs, name ='delete_dogs'),
    
     url(r'cats/remove/(?P<cat_id>[0-9]+)', views.delete_cats, name ='delete_cats'),
+     url(r'^dogs/update/(?P<dog_id>[0-9]+)', views.update_dogs, name ='update_dogs'),
+   
+    url(r'cats/update/(?P<cat_id>[0-9]+)', views.update_cats, name ='update_cats'),
+
 
 ]

@@ -1,0 +1,20 @@
+<header>
+      <h1 class="w3-margin w3-jumbo">Update your Cats Info</h1>
+</header>
+
+
+<form action= "/pets/cats/update/{{cat.id}}" method="post">
+    <h3 style="text-align:center; ">Update Cats</h3>
+  Current Info <br>
+  Name: {{cat.name}} Birthday: {{cat.birthday}} <br> <br> <br>
+   <p>Please enter your details below:</p>
+   {% csrf_token %}
+    Name: <input type="text" name="name"><br>
+  Birthday: <input type="date" name="birthday"><br>
+    
+
+{{ form}}
+<p style = "text-align:center;"><button type="submit" class="btn btn-danger" name = "cats">Update Cats</button></p>
+</div> 
+  
+  

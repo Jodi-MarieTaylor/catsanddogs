@@ -5,7 +5,7 @@
 <a href="/pets/add/cats" class="button">Add Cat</a>
 
 <h1>Here are all your cats</h1>
-{% for cat in cats %}
-       <p>{{cat.name}} {{cat.birthday}} <a href="/pets/cats/remove/{{cat.id}}" class="button">Delete</a></p>
+{% for cat in cats %} 
+       <p>{{cat.name}} {{cat.birthday}} <a href="/pets/cats/remove/{{cat.id}}" class="button">Delete</a>  <a href="/pets/cats/edit/{{cat.id}}" class="button">Update</a></p>
     
     {% endfor %}

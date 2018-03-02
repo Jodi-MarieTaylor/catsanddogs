@@ -82,14 +82,36 @@ def delete_dogs(request, dog_id):
     dog.delete()
     return redirect('/pets/view/dogs')
 
+def edit_cats(request, cat_id):
+    cat = Cats.objects.get(id=cat_id)
+    return  render(request, 'admincatsanddogs/update/cat.html', {'cat': cat})
 
-def detail(request, question_id):
-    return HttpResponse("You're looking at question %s." % question_id)
 
-def results(request, question_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % question_id)
+def edit_dogs(request, dog_id):
+    dog = Dogs.objects.get(id=dog_id)
+    return  render(request, 'admincatsanddogs/update/dog.html', {'dog': dog})
 
-def vote(request, question_id):
-    return HttpResponse("You're voting on question %s." % question_id)
+def update_dogs(request, dog_id):
+    dog = Dogs.objects.get(id=dog_id)
+    if request.method == 'POST':
+        if request.POST['name'] != '':
+
+            dog.name = request.POST['name']
+        if request.POST['birthday'] != '':
+
+            dog.birthday = request.POST['birthday']
+
+        dog.save()
+    return redirect('/pets/view/dogs')
     
+
+def update_cats(request, cat_id):
+    cat = Cats.objects.get(id=cat_id)
+    if request.method == 'POST':
+        if request.POST['name'] != '':
+            cat.name = request.POST['name']
+        if request.POST['birthday'] != '':
+            cat.birthday = request.POST['birthday']
+
+        cat.save()
+    return redirect('/pets/view/cats')

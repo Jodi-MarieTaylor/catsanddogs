@@ -8,6 +8,6 @@
 <h1>Here are all your dogs</h1>
 {% for dog in dogs %}
 
-<p>{{dog.name}} {{dog.birthday}}  <a href="/pets/dogs/remove/{{dog.id}}" class="button">Delete</a></p>
+<p>{{dog.name}} {{dog.birthday}}  <a href="/pets/dogs/remove/{{dog.id}}" class="button">Delete</a> <a href="/pets/dogs/edit/{{dog.id}}" class="button">Update</a></p>
 
     {% endfor %}
